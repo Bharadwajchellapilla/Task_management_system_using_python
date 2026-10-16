@@ -1,0 +1,153 @@
+task_list=['complete pending task','start new project','take interviews','assign a meeting','check employees perfomence']
+completed_tasks=[]
+user_name=[]
+while True:
+    print(1,"admin")
+    print(2,"user")
+    print(3,'register')
+    print(4,"exit")
+    ch=int(input('choose one option: '))
+    if ch==1:
+        print('='*10,"admin pannel","="*10)
+        while True:
+            print('1. Add task\n'
+                   '2. Update task\n'
+                   '3. Delete task\n'
+                   '4. View all tasks\n'
+                   '5. View users\n'
+                   '6. Exit')
+            print()
+            option=int(input("select one option: "))
+            if option==1:
+                name=input('enter a new task')
+                if name in task_list:
+                    print('*'*5,'task already existed''*'*5)
+                    print('current tasks: ', task_list)
+                else:
+                    task_list.append(name)
+                    print(task_list)
+                    print()
+                    print('*'*5,'new task succesfully added','*'*5)
+            elif option==2:
+                print(task_list)
+                print()
+                v=input('enter a excisting task to replace/update: ')
+                new=input('enter a new task to update: ')
+                if v in task_list:
+                    b=task_list.index(v)
+                    task_list[b]=new
+                    print('*'*5,'succesfully updated: ','*'*5)
+                    print(task_list)
+                else:
+                    print('enter existing task name')
+            elif option==3:
+                print('current tasks: ', task_list)
+                name=input('enter task name to delete')
+                if name not in task_list:
+                    print('please enter existed task')
+                else:
+                   x=task_list.index(name)
+                   task_list.pop(x)
+                   print('*'*5,"successfully removed",'*'*5)
+                   print()
+                   print(task_list)
+            elif option==4:
+                print(task_list)
+            elif option==5:
+                for i in user_name:
+                    print(i)
+            elif option==6:
+                op=input("are you want to exit? (yes/no): ")
+                if op=="yes":
+                    print("exit")
+                    break
+               
+    elif ch==2:
+        
+            i=1
+            
+            name=input('enter your name')
+            user_name.append(name)
+            found=False
+            while(i<=3):
+                password=input('enter your password')
+                if password=='1234':
+                    print("valid password")
+                    found=True
+                    break
+                i=i+1
+            
+            if found==True:
+                while True:
+                        print('1. view my tasks\n'
+                              '2. add task\n'
+                              '3. update my task\n'
+                              '4. delete my task\n'
+                              '5. mark as complete\n'
+                              '6. exit')
+                        select=int(input('select one option'))
+                        if select==1:
+                            print(task_list)
+                        elif select==2:
+                            a=input('enter new project to add')
+                            if a in task_list:
+                                print('your entered task is already existed')
+                                print(task_list)
+                            else:
+                                task_list.append(a)
+                                print('*'*5,"successfully added",'*'*5)
+                                print(task_list)
+                        elif select==3:
+                            print(task_list)
+                            print()
+                            b=input('enter existing task name which you want to replace/update: ')
+                            new=input('enter new task to update: ')
+                            if b in task_list:
+                                b=task_list.index(b)
+                                task_list[b]=new
+                                print('succesfully updated')
+                                print(task_list)
+                            else:
+                                print('enter existing task name: ')
+                        elif select==4:
+                           print(task_list)
+                           d=input('enter a task to delete')
+                           if d in task_list:
+                               x=task_list.index(d)
+                               task_list.pop(x)
+                               print('*'*5,'successfully removed',"*"*5)
+                               print(task_list)
+                           else:
+                                print('enter a existing task')
+                        elif select==5:
+                          print(task_list)
+                          c=input('enter completed task')
+                          if c in task_list:
+                              x=task_list.index(c)
+                              task_list.pop(x)
+                              completed_tasks.append(c)
+                              print(completed_tasks)
+                              print()
+                              print("==>current tasks to complete=",task_list)
+                        elif select==6:
+                           ch=input("are you want to exit?(yes/no): ")
+                           if ch=="yes":
+                                break
+                
+                
+            else:
+                print("your chances completed try again!")
+    elif ch==3:
+        r=input("enter your name")
+        user_name.append
+        print('****completed****')
+        print()
+        print('==>now you are a user....your password is 1234')
+        
+    elif ch==4:
+        x=input("are you want to exit?(yes/no)")
+        if x=="yes":
+            print('thank you')
+            break
+
+        
